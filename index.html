@@ -1,241 +1,203 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Synergies by DarkSnake2012</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Synergies</h1>
-      <h2 class="project-tagline">Marvel Contest Of Chmpions Synergies</h2>
-      <a href="https://github.com/DarkSnake2012/synergies" class="btn">View on GitHub</a>
-      <a href="https://github.com/DarkSnake2012/synergies/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/DarkSnake2012/synergies/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
-
-    <section class="main-content">
-      <p>&lt;!doctype html&gt;
-
-    </p>
-        
-        
-        
-        Team Builder for Marvel: Contest of Champions
-        
-        
-        
-    
-    
-        <div>
-            <h1>
-<a id="team-builder-for-marvel-contest-of-champions" class="anchor" href="#team-builder-for-marvel-contest-of-champions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Team Builder for Marvel: Contest of Champions</h1>
-            <div>
-                &lt;!-- Nav tabs --&gt;
-                <ul>
-                    <li><a href="#teams">Teams</a></li>
-                    <li><a href="#collection">Collection</a></li>
-                    <li><a href="#settings">Settings</a></li>
-                </ul>
-
-<pre><code>            &lt;!-- Tab panes --&gt;
-            &lt;div class="tab-content"&gt;
-                &lt;div role="tabpanel" class="tab-pane active" id="teams"&gt;
-                    &lt;div class="row"&gt;
-                        &lt;div class="col-md-6"&gt;
-                            &lt;h3&gt;Champions&lt;/h3&gt;
-                            &lt;div class="form-group"&gt;
-                                &lt;label class="control-label" for="addChampion"&gt;Load a Champion from the Collection&lt;/label&gt;
-                                &lt;input type="text" class="form-control" id="addChampion"&gt;
-                            &lt;/div&gt;
-                            &lt;p&gt;
-                                &lt;button class="btn btn-default loadChampions" data-stars="1"&gt;Load all 1★&lt;/button&gt;
-                                &lt;button class="btn btn-default loadChampions" data-stars="2"&gt;Load all 2★&lt;/button&gt;
-                                &lt;button class="btn btn-default loadChampions" data-stars="3"&gt;Load all 3★&lt;/button&gt;
-                                &lt;button class="btn btn-default loadChampions" data-stars="4"&gt;Load all 4★&lt;/button&gt;
-                                &lt;button class="btn btn-default clearChampions"&gt;Remove all&lt;/button&gt;
-                            &lt;/p&gt;
-                            &lt;ul class="list-group" id="championsList"&gt;&lt;/ul&gt;
-                        &lt;/div&gt;
-                        &lt;div class="col-md-6"&gt;
-                            &lt;h3&gt;Teams&lt;/h3&gt;
-                            &lt;p&gt;
-                                &lt;button class="btn btn-primary create_teams"&gt;Create Teams&lt;/button&gt;
-                            &lt;/p&gt;
-                            &lt;p&gt;
-                                &lt;div class="progress"&gt;
-                                    &lt;div class="progress-bar" role="progressbar" style="width: 0%;"&gt;
-                                        0%
-                                    &lt;/div&gt;
-                                &lt;/div&gt;
-                            &lt;/p&gt;
-                            &lt;div id="teamsList"&gt;&lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div role="tabpanel" class="tab-pane" id="collection"&gt;
-                    &lt;div class="row" id="championsList"&gt;
-                        &lt;div class="col-md-6"&gt;
-                            &lt;div class="row"&gt;
-                                &lt;div class="col-sm-6" id="stars1" data-stars="1"&gt;
-                                    &lt;h3 class="text-center"&gt;1★&lt;/h3&gt;
-                                &lt;/div&gt;
-                                &lt;div class="col-sm-6" id="stars2" data-stars="2"&gt;
-                                    &lt;h3 class="text-center"&gt;2★&lt;/h3&gt;
-                                &lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class="col-md-6"&gt;
-                            &lt;div class="row"&gt;
-                                &lt;div class="col-sm-6" id="stars3" data-stars="3"&gt;
-                                    &lt;h3 class="text-center"&gt;3★&lt;/h3&gt;
-                                &lt;/div&gt;
-                                &lt;div class="col-sm-6" id="stars4" data-stars="4"&gt;
-                                    &lt;h3 class="text-center"&gt;4★&lt;/h3&gt;
-                                &lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div role="tabpanel" class="tab-pane" id="settings"&gt;
-                    &lt;div class="row"&gt;
-                        &lt;div class="col-sm-4"&gt;
-                            &lt;fieldset&gt;
-                            &lt;legend&gt;General settings&lt;/legend&gt;
-                            &lt;div class="form-group"&gt;
-                                &lt;label for="duplicate_class_malus"&gt;Malus for duplicate class in a team&lt;/label&gt;
-                                &lt;select class="form-control" id="duplicate_class_malus"&gt;
-                                    &lt;option value="0"&gt;Low&lt;/option&gt;
-                                    &lt;option value="1"&gt;Medium&lt;/option&gt;
-                                    &lt;option value="2"&gt;High&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                            &lt;div class="form-group"&gt;
-                                &lt;label for="team_size"&gt;Team size&lt;/label&gt;
-                                &lt;select class="form-control" id="team_size"&gt;
-                                    &lt;option&gt;3&lt;/option&gt;
-                                    &lt;option&gt;4&lt;/option&gt;
-                                    &lt;option&gt;5&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                            &lt;/fieldset&gt;
-
-                        &lt;/div&gt;
-                        &lt;div class="col-sm-4"&gt;
-                            &lt;fieldset&gt;
-                            &lt;legend&gt;Defensive synergies&lt;/legend&gt;
-                            &lt;div class="form-group"&gt;
-                                &lt;label for="syn_bp"&gt;Block Proficiency&lt;/label&gt;
-                                &lt;select class="form-control synergy" data-synergy="bp" id="syn_bp"&gt;
-                                    &lt;option value="0"&gt;Low&lt;/option&gt;
-                                    &lt;option value="1" selected="selected"&gt;Medium&lt;/option&gt;
-                                    &lt;option value="2"&gt;High&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                            &lt;div class="form-group"&gt;
-                                &lt;label for="syn_pbc"&gt;Perfect Block Chance&lt;/label&gt;
-                                &lt;select class="form-control synergy" data-synergy="pbc" id="syn_pbc"&gt;
-                                    &lt;option value="0"&gt;Low&lt;/option&gt;
-                                    &lt;option value="1" selected="selected"&gt;Medium&lt;/option&gt;
-                                    &lt;option value="2"&gt;High&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                            &lt;div class="form-group"&gt;
-                                &lt;label for="syn_ar"&gt;Armor&lt;/label&gt;
-                                &lt;select class="form-control synergy" data-synergy="ar" id="syn_ar"&gt;
-                                    &lt;option value="0"&gt;Low&lt;/option&gt;
-                                    &lt;option value="1" selected="selected"&gt;Medium&lt;/option&gt;
-                                    &lt;option value="2"&gt;High&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                            &lt;div class="form-group"&gt;
-                                &lt;label for="syn_h"&gt;Health&lt;/label&gt;
-                                &lt;select class="form-control synergy" data-synergy="h" id="syn_h"&gt;
-                                    &lt;option value="0"&gt;Low&lt;/option&gt;
-                                    &lt;option value="1" selected="selected"&gt;Medium&lt;/option&gt;
-                                    &lt;option value="2"&gt;High&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                            &lt;/fieldset&gt;
-                        &lt;/div&gt;
-                        &lt;div class="col-sm-4"&gt;
-                            &lt;fieldset&gt;
-                            &lt;legend&gt;Offensive synergies&lt;/legend&gt;
-                            &lt;div class="form-group"&gt;
-                                &lt;label for="syn_cr"&gt;Crit Rate&lt;/label&gt;
-                                &lt;select class="form-control synergy" data-synergy="cr" id="syn_cr"&gt;
-                                    &lt;option value="0"&gt;Low&lt;/option&gt;
-                                    &lt;option value="1" selected="selected"&gt;Medium&lt;/option&gt;
-                                    &lt;option value="2"&gt;High&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                            &lt;div class="form-group"&gt;
-                                &lt;label for="syn_cd"&gt;Crit Damage&lt;/label&gt;
-                                &lt;select class="form-control synergy" data-synergy="cd" id="syn_cd"&gt;
-                                    &lt;option value="0"&gt;Low&lt;/option&gt;
-                                    &lt;option value="1" selected="selected"&gt;Medium&lt;/option&gt;
-                                    &lt;option value="2"&gt;High&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                            &lt;div class="form-group"&gt;
-                                &lt;label for="syn_pg"&gt;Power Gain&lt;/label&gt;
-                                &lt;select class="form-control synergy" data-synergy="pg" id="syn_pg"&gt;
-                                    &lt;option value="0"&gt;Low&lt;/option&gt;
-                                    &lt;option value="1" selected="selected"&gt;Medium&lt;/option&gt;
-                                    &lt;option value="2"&gt;High&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                            &lt;div class="form-group"&gt;
-                                &lt;label for="syn_sc"&gt;Stun Chance&lt;/label&gt;
-                                &lt;select class="form-control synergy" data-synergy="sc" id="syn_sc"&gt;
-                                    &lt;option value="0"&gt;Low&lt;/option&gt;
-                                    &lt;option value="1" selected="selected"&gt;Medium&lt;/option&gt;
-                                    &lt;option value="2"&gt;High&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                            &lt;div class="form-group"&gt;
-                                &lt;label for="syn_at"&gt;Attack&lt;/label&gt;
-                                &lt;select class="form-control synergy" data-synergy="at" id="syn_at"&gt;
-                                    &lt;option value="0"&gt;Low&lt;/option&gt;
-                                    &lt;option value="1" selected="selected"&gt;Medium&lt;/option&gt;
-                                    &lt;option value="2"&gt;High&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                            &lt;/fieldset&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"&gt;&lt;/script&gt;
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"&gt;&lt;/script&gt;
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"&gt;&lt;/script&gt;
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/taffydb/2.7.2/taffy-min.js"&gt;&lt;/script&gt;
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"&gt;&lt;/script&gt;
-    &lt;script src="js/genetic-0.1.14.min.js"&gt;&lt;/script&gt;
-    &lt;script src="js/logic.js"&gt;&lt;/script&gt;
-    &lt;script src="js/data.js"&gt;&lt;/script&gt;
-    &lt;script src="js/ui.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-
-<p></p>
-</div>
-</div>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/DarkSnake2012/synergies">Synergies</a> is maintained by <a href="https://github.com/DarkSnake2012">DarkSnake2012</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
-  </body>
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Team Builder for Marvel: Contest of Champions</title>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/typeahead.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Team Builder for Marvel: Contest of Champions</h1>
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#teams" role="tab" data-toggle="tab">Teams</a></li>
+					<li role="presentation"><a href="#collection" role="tab" data-toggle="tab">Collection</a></li>
+					<li role="presentation"><a href="#settings" role="tab" data-toggle="tab">Settings</a></li>
+				</ul>
+				
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="teams">
+						<div class="row">
+							<div class="col-md-6">
+								<h3>Champions</h3>
+								<div class="form-group">
+									<label class="control-label" for="addChampion">Load a Champion from the Collection</label>
+									<input type="text" class="form-control" id="addChampion">
+								</div>
+								<p>
+									<button class="btn btn-default loadChampions" data-stars="1">Load all 1★</button>
+									<button class="btn btn-default loadChampions" data-stars="2">Load all 2★</button>
+									<button class="btn btn-default loadChampions" data-stars="3">Load all 3★</button>
+									<button class="btn btn-default loadChampions" data-stars="4">Load all 4★</button>
+									<button class="btn btn-default clearChampions">Remove all</button>
+								</p>
+								<ul class="list-group" id="championsList"></ul>
+							</div>
+							<div class="col-md-6">
+								<h3>Teams</h3>
+								<p>
+									<button class="btn btn-primary create_teams">Create Teams</button>
+								</p>
+								<p>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 0%;">
+											0%
+										</div>
+									</div>
+								</p>
+								<div id="teamsList"></div>
+							</div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="collection">
+						<div class="row" id="championsList">
+							<div class="col-md-6">
+								<div class="row">
+									<div class="col-sm-6" id="stars1" data-stars="1">
+										<h3 class="text-center">1★</h3>
+									</div>
+									<div class="col-sm-6" id="stars2" data-stars="2">
+										<h3 class="text-center">2★</h3>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="row">
+									<div class="col-sm-6" id="stars3" data-stars="3">
+										<h3 class="text-center">3★</h3>
+									</div>
+									<div class="col-sm-6" id="stars4" data-stars="4">
+										<h3 class="text-center">4★</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="settings">
+						<div class="row">
+							<div class="col-sm-4">
+								<fieldset>
+								<legend>General settings</legend>
+								<div class="form-group">
+									<label for="duplicate_class_malus">Malus for duplicate class in a team</label>
+									<select class="form-control" id="duplicate_class_malus">
+										<option value="0">Low</option>
+										<option value="1">Medium</option>
+										<option value="2">High</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="team_size">Team size</label>
+									<select class="form-control" id="team_size">
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</select>
+								</div>
+								</fieldset>
+								
+							</div>
+							<div class="col-sm-4">
+								<fieldset>
+								<legend>Defensive synergies</legend>
+								<div class="form-group">
+									<label for="syn_bp">Block Proficiency</label>
+									<select class="form-control synergy" data-synergy="bp" id="syn_bp">
+										<option value="0">Low</option>
+										<option value="1" selected="selected">Medium</option>
+										<option value="2">High</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="syn_pbc">Perfect Block Chance</label>
+									<select class="form-control synergy" data-synergy="pbc" id="syn_pbc">
+										<option value="0">Low</option>
+										<option value="1" selected="selected">Medium</option>
+										<option value="2">High</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="syn_ar">Armor</label>
+									<select class="form-control synergy" data-synergy="ar" id="syn_ar">
+										<option value="0">Low</option>
+										<option value="1" selected="selected">Medium</option>
+										<option value="2">High</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="syn_h">Health</label>
+									<select class="form-control synergy" data-synergy="h" id="syn_h">
+										<option value="0">Low</option>
+										<option value="1" selected="selected">Medium</option>
+										<option value="2">High</option>
+									</select>
+								</div>
+								</fieldset>
+							</div>
+							<div class="col-sm-4">
+								<fieldset>
+								<legend>Offensive synergies</legend>
+								<div class="form-group">
+									<label for="syn_cr">Crit Rate</label>
+									<select class="form-control synergy" data-synergy="cr" id="syn_cr">
+										<option value="0">Low</option>
+										<option value="1" selected="selected">Medium</option>
+										<option value="2">High</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="syn_cd">Crit Damage</label>
+									<select class="form-control synergy" data-synergy="cd" id="syn_cd">
+										<option value="0">Low</option>
+										<option value="1" selected="selected">Medium</option>
+										<option value="2">High</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="syn_pg">Power Gain</label>
+									<select class="form-control synergy" data-synergy="pg" id="syn_pg">
+										<option value="0">Low</option>
+										<option value="1" selected="selected">Medium</option>
+										<option value="2">High</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="syn_sc">Stun Chance</label>
+									<select class="form-control synergy" data-synergy="sc" id="syn_sc">
+										<option value="0">Low</option>
+										<option value="1" selected="selected">Medium</option>
+										<option value="2">High</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="syn_at">Attack</label>
+									<select class="form-control synergy" data-synergy="at" id="syn_at">
+										<option value="0">Low</option>
+										<option value="1" selected="selected">Medium</option>
+										<option value="2">High</option>
+									</select>
+								</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/taffydb/2.7.2/taffy-min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+		<script src="js/genetic-0.1.14.min.js"></script>
+        <script src="js/logic.js"></script>
+        <script src="js/data.js"></script>
+        <script src="js/ui.js"></script>
+	</body>
 </html>

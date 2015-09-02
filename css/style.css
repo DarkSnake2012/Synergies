@@ -1,0 +1,29 @@
+ul.nav-tabs {
+	margin-bottom: 1em;
+}
+.champion-name {
+	text-transform: uppercase;
+}
+.champion-images { background-color: #292c31 }
+
+.champion-portrait {
+	width:110px;
+	height:113px;
+	background-size: 73px 77px, 100% 100%; 
+	background-position: 19px 7px, 0px 0px;
+	background-repeat: no-repeat;
+	border-bottom: 10px solid black;
+}
+
+.text-skill { color: #e02d29 }
+.text-mutant { color: #eab41e }
+.text-tech { color: #1a34d3 }
+.text-cosmic { color: #2a99c4 }
+.text-mystic { color: #7920b6 }
+.text-science { color: #2b941d }
+.border-skill { border-color: #e02d29 }
+.border-mutant { border-color: #eab41e }
+.border-tech { border-color: #1a34d3 }
+.border-cosmic { border-color: #2a99c4 }
+.border-mystic { border-color: #7920b6 }
+.border-science { border-color: #2b941d }
